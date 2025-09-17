@@ -1,0 +1,152 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tipos de Almacenamiento de Datos</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Encabezado -->
+  <header class="bg-blue-600 text-white py-6 shadow-md">
+    <h1 class="text-center text-3xl font-bold">Tipos de Almacenamiento de Datos</h1>
+    <p class="text-center text-lg mt-2">Explora, compara y pon a prueba tus conocimientos</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6 space-y-12">
+
+    <!-- Sección: Filtro -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">🔍 Filtrar tipos de almacenamiento</h2>
+      <input 
+        type="text" 
+        id="filtro" 
+        placeholder="Escribe para filtrar (ej: SSD, nube...)" 
+        class="w-full p-2 border rounded-lg shadow-sm"
+        oninput="filtrarTarjetas()" />
+    </section>
+
+    <!-- Sección: Tarjetas -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">🗂️ Tarjetas de almacenamiento</h2>
+      <div id="tarjetas" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <!-- Ejemplo tarjeta -->
+        <div class="tarjeta bg-white p-4 rounded-2xl shadow hover:shadow-lg transition" data-nombre="Disco Duro HDD">
+          <h3 class="font-bold text-lg">HDD</h3>
+          <p class="text-sm mt-2">Almacenamiento magnético con platos giratorios. Gran capacidad, menor velocidad.</p>
+        </div>
+        <div class="tarjeta bg-white p-4 rounded-2xl shadow hover:shadow-lg transition" data-nombre="Unidad de Estado Sólido SSD">
+          <h3 class="font-bold text-lg">SSD</h3>
+          <p class="text-sm mt-2">Almacenamiento en memoria flash. Muy rápido, más caro por GB que HDD.</p>
+        </div>
+        <div class="tarjeta bg-white p-4 rounded-2xl shadow hover:shadow-lg transition" data-nombre="Almacenamiento en la Nube">
+          <h3 class="font-bold text-lg">Nube</h3>
+          <p class="text-sm mt-2">Acceso remoto a servidores. Escalable, requiere internet, depende del proveedor.</p>
+        </div>
+        <div class="tarjeta bg-white p-4 rounded-2xl shadow hover:shadow-lg transition" data-nombre="Memoria USB">
+          <h3 class="font-bold text-lg">Memoria USB</h3>
+          <p class="text-sm mt-2">Portátil, fácil de usar, limitada en capacidad comparada con discos externos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Tabla comparativa -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">📊 Tabla comparativa</h2>
+      <div class="overflow-x-auto">
+        <table class="table-auto w-full border-collapse border border-gray-300 text-sm">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="border px-4 py-2">Tipo</th>
+              <th class="border px-4 py-2">Velocidad</th>
+              <th class="border px-4 py-2">Capacidad</th>
+              <th class="border px-4 py-2">Costo</th>
+              <th class="border px-4 py-2">Portabilidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border px-4 py-2">HDD</td>
+              <td class="border px-4 py-2">Baja</td>
+              <td class="border px-4 py-2">Alta</td>
+              <td class="border px-4 py-2">Bajo</td>
+              <td class="border px-4 py-2">Media</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">SSD</td>
+              <td class="border px-4 py-2">Alta</td>
+              <td class="border px-4 py-2">Media</td>
+              <td class="border px-4 py-2">Alto</td>
+              <td class="border px-4 py-2">Media</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">Nube</td>
+              <td class="border px-4 py-2">Variable</td>
+              <td class="border px-4 py-2">Escalable</td>
+              <td class="border px-4 py-2">Suscripción</td>
+              <td class="border px-4 py-2">Muy alta</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">USB</td>
+              <td class="border px-4 py-2">Media</td>
+              <td class="border px-4 py-2">Baja</td>
+              <td class="border px-4 py-2">Medio</td>
+              <td class="border px-4 py-2">Muy alta</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Sección: Glosario -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">📖 Glosario</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Latencia:</strong> Tiempo que tarda en responder un dispositivo de almacenamiento.</li>
+        <li><strong>Memoria Flash:</strong> Tecnología usada en SSD y USB para guardar datos sin partes móviles.</li>
+        <li><strong>Escalabilidad:</strong> Capacidad de aumentar almacenamiento según la demanda (ej. nube).</li>
+      </ul>
+    </section>
+
+    <!-- Sección: Quiz -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">📝 Quiz</h2>
+      <p class="mb-2">¿Cuál es más rápido, un HDD o un SSD?</p>
+      <button onclick="responderQuiz('correcto')" class="bg-green-500 text-white px-4 py-2 rounded-lg mr-2 hover:bg-green-600">SSD</button>
+      <button onclick="responderQuiz('incorrecto')" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">HDD</button>
+      <p id="resultado" class="mt-4 font-bold"></p>
+    </section>
+  </main>
+
+  <footer class="bg-gray-100 text-center py-4 mt-12 text-sm">
+    © 2025 Web educativa — Almacenamiento de datos
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function filtrarTarjetas() {
+      const filtro = document.getElementById("filtro").value.toLowerCase();
+      const tarjetas = document.querySelectorAll(".tarjeta");
+      tarjetas.forEach(t => {
+        const nombre = t.getAttribute("data-nombre").toLowerCase();
+        t.style.display = nombre.includes(filtro) ? "block" : "none";
+      });
+    }
+
+    function responderQuiz(respuesta) {
+      const resultado = document.getElementById("resultado");
+      if (respuesta === "correcto") {
+        resultado.textContent = "✅ Correcto: el SSD es más rápido que el HDD.";
+        resultado.className = "text-green-600 font-bold";
+      } else {
+        resultado.textContent = "❌ Incorrecto: el HDD es más lento que un SSD.";
+        resultado.className = "text-red-600 font-bold";
+      }
+    }
+  </script>
+</body>
+</html>
